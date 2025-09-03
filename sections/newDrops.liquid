@@ -5,9 +5,12 @@
         </div>
         <div class="py-14">
             
-  <a href="/product" class="w-full">
-    <button class="bg-[#4A69E2] px-4 py-2 rounded-md font-semibold mt-10 text-[#FFFFFF] cursor-pointer font-rubik ">SHOP NEW DROPS</button>
-  </a>
+ {% render 'button', 
+  link: '/product', 
+  text: 'SHOP NEW DROPS', 
+  extra_classes: 'bg-[#4A69E2] text-white mt-10' 
+%}
+
             {% comment %} <button class="bg-[#4A69E2] px-4 py-2 rounded-md font-semibold mt-10 text-[#FFFFFF]">SHOP NEW DROPS</button> {% endcomment %}
         </div>
     </div>
@@ -19,9 +22,10 @@
               <div class="">
                     <img data-index="2" src="{{ 'icon-new.svg' | asset_url }}" width="" height="" />
                 </div>
-                <div class="flex justify-center ">
-                    <img data-index="2" src="{{ 'icon-first sneakers.png' | asset_url }}" width="" height="" />
-                </div>
+                <div class="flex justify-center items-center h-full px-6">
+  <img src="{{ 'icon-first sneakers.png' | asset_url }}" class="max-h-full max-w-full object-contain" alt="Sneakers" width="" height="" />
+</div>
+
             </div>
             </div>
           
@@ -47,9 +51,10 @@
               <div class="">
                     <img data-index="2" src="{{ 'icon-new.svg' | asset_url }}" width="" height="" />
                 </div>
-                <div class="flex justify-center ">
-                    <img data-index="2" src="{{ 'icon-second-sneakers.png' | asset_url }}" width="" height="" />
-                </div>
+                <div class="flex justify-center items-center h-full px-6">
+  <img src="{{ 'icon-second-sneakers.png' | asset_url }}" class="max-h-full max-w-full object-contain" alt="Sneakers" width="" height="" />
+</div>
+
             </div>
             </div>
           
@@ -75,9 +80,10 @@
               <div class="">
                     <img data-index="2" src="{{ 'icon-new.svg' | asset_url }}" width="" height="" />
                 </div>
-                <div class="flex justify-center ">
-                    <img data-index="2" src="{{ 'icon-third-sneakers.png' | asset_url }}" width="" height="" />
-                </div>
+               <div class="flex justify-center items-center h-full px-6">
+  <img src="{{ 'icon-third-sneakers.png' | asset_url }}" class="max-h-full max-w-full object-contain" alt="Sneakers" width="" height="" />
+</div>
+
             </div>
             </div>
           
@@ -102,10 +108,11 @@
         <div class="h-96 flex flex-col bg-blue-50 rounded-[28px] ">
               <div class="">
                     <img data-index="2" src="{{ 'icon-new.svg' | asset_url }}" width="" height="" />
-                </div>
-                <div class="flex justify-center ">
-                    <img data-index="2" src="{{ 'icon-fourth sneakers.png' | asset_url }}" width="" height="" />
-                </div>
+                </div> 
+                <div class="flex justify-center items-center h-full px-6">
+  <img src="{{ 'icon-fourth sneakers.png' | asset_url }}" class="max-h-full max-w-full object-contain" alt="Sneakers" width="" height="" />
+</div>
+
             </div>
             </div>
           
@@ -122,9 +129,7 @@
     </button>
   </a>
 </div>
-
         </div>
-
          
     </div>
 
