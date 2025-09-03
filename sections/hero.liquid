@@ -11,17 +11,18 @@
 
   <!-- Text Content -->
   <div class="absolute bottom-6 left-6 md:bottom-12 md:left-12 text-white z-10">
-    <h1 class="text-2xl md:text-4xl font-bold mb-2 font-rubik">NIKE AIR MAX</h1>
-    <p class="mb-4 text-sm md:text-base font-rubik">
-      Nike introducing the new air max for <br> everyone's comfort
-    </p>
-    <a href="/product" class="w-full">
-    <button class="bg-[#4A69E2] px-4 py-2 rounded-md font-semibold font-rubik cursor-pointer">SHOP NOW</button>
-  </a>
-    {% comment %} <button class="bg-[#4A69E2] px-4 py-2 rounded-md font-semibold">
-      SHOP NOW
-    </button> {% endcomment %}
-  </div>
+  <h1 class="text-2xl md:text-4xl font-bold mb-2 font-rubik">NIKE AIR MAX</h1>
+  <p class="mb-4 text-sm md:text-base font-rubik">
+    Nike introducing the new air max for <br> everyone's comfort
+  </p>
+
+  {% render 'button', 
+    link: '/product', 
+    text: 'SHOP NOW', 
+    extra_classes: 'bg-[#4A69E2] text-white' 
+  %}
+</div>
+
 
   <!-- Right Images (thumbnails) -->
   <div class="absolute bottom-5 right-5 flex flex-col gap-3 z-10">
@@ -38,6 +39,7 @@
     <span data-index="2" class="dot h-2 w-2 bg-[#FEFEFE66] rounded-full inline-block cursor-pointer"></span>
   </div>
 </section>
+
 
 <script>
   const images = document.querySelectorAll('#carousel-images img');
@@ -70,9 +72,9 @@
   });
 
    {% comment %} Optional: auto-scroll every 5s {% endcomment %}
-   setInterval(() => {
+   {% comment %} setInterval(() => {
      let next = (current + 1) % images.length;
      showSlide(next);
-  }, 5000);
+  }, 5000); {% endcomment %}
 </script>
 
