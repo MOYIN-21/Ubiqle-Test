@@ -13,10 +13,14 @@
       "type": "reviews",
       "settings": {}
     },
+    "community": {
+      "type": "community",
+      "settings": {}
+    },
     "footer": {
       "type": "footer",
       "settings": {}
     }
   },
-  "order": ["hero", "newDrops", "collection", "footer"]
+  "order": ["hero", "newDrops", "collection", "community", "footer"]
 }
