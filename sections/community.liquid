@@ -7,38 +7,71 @@
   <span class="block">CLUB & GET 15% OFF</span>
 </p>
 
-    <p class="text-[#E7E7E3] text-xl font-semibold">Sign up for free! Join the community.</p>
-    
-    <div class="flex flex-row gap-2">
-        <div>
-            <input type="email" id="email" class="outline-none border border-[#FFFFFF] text-[#FFFFFF] text-sm rounded-lg block w-80 h-12 p-2.5 " placeholder="Email address" required />
+        <p class="text-[#E7E7E3] text-xl font-semibold">
+          Sign up for free! Join the community.
+        </p>
+
+        <div class="flex flex-row gap-2">
+          <div>
+            <input 
+              type="email" 
+              id="email" 
+              class="outline-none border border-[#FFFFFF] text-[#FFFFFF] text-sm rounded-lg block w-80 h-12 p-2.5" 
+              placeholder="Email address" 
+              required 
+            />
+          </div>
+
+          <div>
+            {% render 'button',
+              link: '/#',
+              text: 'SUBMIT',
+              extra_classes: 'bg-[#232321] text-[#FFFFFF] h-12'
+            %}
+          </div>
         </div>
+      </div>
 
-        <div>
-      {% render 'button',
-        link: '/#',
-        text: 'SUBMIT',
-        extra_classes: 'bg-[#232321] text-[#FFFFFF] h-12'
-      %}
+      <!-- Right side (logo) -->
+      <div class="flex justify-center items-center">
+        <a href="/#">
+          <img
+            class="block w-full h-full object-center object-cover cursor-pointer"
+            src="{{ 'icon-whiteLogo.svg' | asset_url }}"
+            alt="Logo Image" width="" height=""
+          />
+        </a>
+      </div>
     </div>
-    </div>
-
-    </div>
-
-    <div class="flex justify-center items-center">
-      <a href="/#"> 
-       <img
-          class="block w-full h-full object-center object-cover"
-          src="{{ 'icon-whiteLogo.svg' | asset_url }}"
-          alt="Logo Image"
-          width=""
-          height=""
-        /> 
-    </a>
-
-    </div>
-    
   </div>
-</div>
-
 </section>
+
+{% schema %}
+{
+  "name": "Community Section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "headline",
+      "label": "Headline",
+      "default": "JOIN OUR KICKSPLUS CLUB & GET 15% OFF"
+    },
+    {
+      "type": "text",
+      "id": "subtext",
+      "label": "Subtext",
+      "default": "Sign up for free! Join the community."
+    },
+    {
+      "type": "image_picker",
+      "id": "logo",
+      "label": "Logo"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Community"
+    }
+  ]
+}
+{% endschema %}
