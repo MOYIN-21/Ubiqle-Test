@@ -3,9 +3,9 @@
   <nav class="container mx-auto h-16 flex justify-between items-center px-6">
     <!-- Left Menu -->
     <ul class="flex items-center gap-10 text-sm font-medium">
-      <li><a href="/collection" class="text-[#232321] text-base font-semibold">New Drops 🔥</a></li>
-      <li><a href="/collection" class="text-[#232321] text-base font-semibold">Men</a></li>
-      <li><a href="/collection" class="text-[#232321] text-base font-semibold">Women</a></li>
+      <li><a href="/#" class="text-[#232321] text-base font-semibold hover:underline">New Drops 🔥</a></li>
+      <li><a href="/#" class="text-[#232321] text-base font-semibold hover:underline">Men</a></li>
+      <li><a href="/#" class="text-[#232321] text-base font-semibold hover:underline">Women</a></li>
     </ul>
 
     <!-- Logo -->
@@ -27,28 +27,36 @@
     <div class="flex items-center gap-6">
       <!-- Search -->
       <button class="hover:text-gray-600">
+                       <a href="/#"> 
+
          <img
-          class="block w-full h-[28px] w-[28px] object-center object-cover"
+          class="block w-full h-[28px] w-[28px] object-center object-cover cursor-pointer"
           src="{{ 'icon-search.svg' | asset_url }}"
           alt="Search-icon Image"
           width=""
           height=""
         /> 
+        </a>
       </button>
 
       <!-- User -->
       <button class="hover:text-gray-600">
+                       <a href="/#"> 
+
          <img
-          class="block w-full h-[24px] w-[24px] object-center object-cover"
+          class="block w-full h-[24px] w-[24px] object-center object-cover ursor-pointer"
           src="{{ 'icon-user.svg' | asset_url }}"
           alt="Profile-image"
           width=""
           height=""
         /> 
+        </a>
       </button>
 
       <div class="relative">
+                       <a href="/#"> 
         <span class="absolute -top-4 bg-[#FFA52F] text-black text-xs font-bold w-5 h-[32px] w-[32px] rounded-full flex items-center justify-center">0</span>
+        </a>
       </div>
     </div>
   </nav>
