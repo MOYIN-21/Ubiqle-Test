@@ -5,12 +5,12 @@
       "type": "hero",
       "settings": {}
     },
-    "collection": {
-      "type": "collection",
+     "newDrops": {
+      "type": "newDrops",
       "settings": {}
     },
-    "newDrops": {
-      "type": "newDrops",
+    "collection": {
+      "type": "collection",
       "settings": {}
     },
     "footer": {
@@ -18,5 +18,5 @@
       "settings": {}
     }
   },
-  "order": ["hero", "collection", "newDrops", "footer"]
+  "order": ["hero", "newDrops", "collection", "footer"]
 }
