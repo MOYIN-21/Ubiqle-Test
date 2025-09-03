@@ -6,6 +6,8 @@
     {{ 'critical.css' | asset_url | stylesheet_tag: preload: true }}
 
       {% render 'meta-tags' %} {% endcomment %}
+       <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;700&display=swap" rel="stylesheet">
+
            <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 
     {{ content_for_header }}

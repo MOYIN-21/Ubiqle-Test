@@ -1,4 +1,4 @@
-<header class="w-full border-gray-200 bg-white overflow-x-hidden px-8">
+<header class="w-full border-gray-200 bg-[#FAFAFA] overflow-x-hidden px-8">
   <nav class="container mx-auto h-16 flex justify-between items-center px-6">
     <!-- Left Menu -->
     <ul class="flex items-center gap-6 text-sm font-medium">
@@ -9,13 +9,16 @@
 
     <!-- Logo -->
     <div class="flex justify-center items-center">
+      <a href="/#"> 
        <img
-          class="block w-full h-full object-center object-cover"
+          class="block w-full h-full object-center object-cover cursor-pointer"
           src="{{ 'icon-logo.svg' | asset_url }}"
           alt="Logo Image"
           width=""
           height=""
         /> 
+    </a>
+      
       {% comment %} <a href="/" class="text-2xl font-extrabold tracking-widest">KICKS</a> {% endcomment %}
     </div>
 
