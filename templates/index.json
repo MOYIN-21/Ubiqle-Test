@@ -1,0 +1,22 @@
+{
+  "wrapper": "main.main-home#main",
+  "sections": {
+    "hero": {
+      "type": "hero",
+      "settings": {}
+    },
+    "collection": {
+      "type": "collection",
+      "settings": {}
+    },
+    "newDrops": {
+      "type": "newDrops",
+      "settings": {}
+    },
+    "footer": {
+      "type": "footer",
+      "settings": {}
+    }
+  },
+  "order": ["hero", "collection", "newDrops", "footer"]
+}
