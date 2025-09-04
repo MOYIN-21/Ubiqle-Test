@@ -1,0 +1,277 @@
+{% comment %} {% comment %} <section class="px-14 bg-[#FAFAFA] py-16 ">
+    <div class="bg-[#232321] px-14 py-6">
+        <div>
+            <p class="text-2xl font-normal text-[#FEFEFE] flex flex-wrap justify-center"> 
+                <span class="mx-4">SOLD ONLY IN PREMIUM QUALITY</span> |
+                <span class="mx-4">SUBSCRIBE TO OUR CARE PROGRAM</span> |
+                <span class="mx-4">FREE RETURNS EVEN AFTER 2 WEEKS</span>
+            </p>
+        </div>
+    <div id="categories" class="container">
+        <div class="flex justify-between mt-16">
+            <div class="text-[#FFFFFF] font-semibold text-7xl px-7">CATEGORIES</div>
+            <div class="flex flex-row gap-4">
+                <div class="w-10 h-10 bg-[#E7E7E3] border-2 rounded-[8px] flex justify-center items-center mt-3 cursor-pointer">
+                    <span class="text-[#232321] w-1 h-2 flex items-center justify-center">&lt;</span>
+                </div>
+               <div class="w-10 h-10 bg-[#E7E7E3] border-2 border-white rounded-[8px] flex justify-center items-center mt-3 cursor-pointer">
+                    <span class="text-[#232321] w-1 h-2 flex items-center justify-center">&gt;</span>
+                </div>
+            </div>
+        </div>  
+
+    </div>
+    </div>
+</section> {% endcomment %}
+
+<section class="bg-[#FAFAFA] py-16">
+  <div class="bg-[#232321] px-14 py-6">
+     <div>
+            <p class="text-2xl font-normal text-[#FEFEFE] flex flex-wrap justify-center"> 
+                <span class="mx-4">SOLD ONLY IN PREMIUM QUALITY</span> |
+                <span class="mx-4">SUBSCRIBE TO OUR CARE PROGRAM</span> |
+                <span class="mx-4">FREE RETURNS EVEN AFTER 2 WEEKS</span>
+            </p>
+        </div>
+
+    <!-- Categories Header with Arrows -->
+    <div id="categories" class="container">
+      <div class="flex justify-between mt-16">
+            <div class="text-[#FFFFFF] font-semibold text-7xl px-7">CATEGORIES
+        </div>
+        <div class="flex flex-row gap-4">
+          <!-- Left Arrow -->
+          <div class="w-10 h-10 bg-[#E7E7E3] border-2 rounded-[8px] flex justify-center items-center mt-3 cursor-pointer">
+            <span class="text-[#232321] text-lg font-bold flex items-center justify-center">&lt;</span>
+          </div>
+          <!-- Right Arrow -->
+          <div class="w-10 h-10 bg-[#E7E7E3] border-2 border-white rounded-[8px] flex justify-center items-center mt-3 cursor-pointer">
+            <span class="text-[#232321] text-lg font-bold flex items-center justify-center">&gt;</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Size Selector -->
+   <div class="flex flex-row ">
+        <div class="py-14 px-16 flex flex-col gap-2 flex-wrap mb-8 mt-6 bg-[#ECEEF0] rounded-tl-4xl">
+            <div class="flex flex-row justify-between">
+                <div><span class="font-smiebold text-base text-[#232321]">SIZE</span></div>
+                <div><a href="#" class="ml-auto underline text-sm font-medium text-[#232321]">SIZE CHART</a></div>
+            </div>
+
+            <div>
+                {% assign sizes = "38,39,40,41,42,43,44,45,46,47" | split: "," %}
+                {% for size in sizes %}
+            <button 
+            class="size-btn px-3 py-1 text-sm rounded bg-white text-black cursor-pointer"
+            data-size="{{ size }}">
+            {{ size }}
+            </button>
+            {% endfor %}
+            </div>
+        </div>
+
+    <!-- Categories Grid -->
+    <div class="grid grid-cols-1 md:grid-cols-2">
+      {% for block in section.blocks %}
+        <div class="relative p-6 bg-[#F5F5F5]">
+          
+          <!-- Image -->
+          {% if block.settings.image != blank %}
+            <img src="{{ 'icon-fourth sneakers.png' | img_url }}" alt="{{ "shoe" }}" class="mx-auto mb-4 object-contain" width="" height="">
+          {% else %}
+            <div class="bg-gray-200 h-40 mb-4 flex items-center justify-center">No Image</div>
+          {% endif %}
+
+          <!-- Title -->
+          <h3 class="font-bold text-2xl text-black">{{ block.settings.title }}</h3>
+
+          <!-- External Link -->
+          {% if block.settings.link != blank %}
+            <a href="{{ block.settings.link }}" class="absolute bottom-4 right-4 w-10 h-10 bg-white text-black rounded flex items-center justify-center">
+              ↗
+            </a>
+          {% endif %}
+        </div>
+      {% endfor %}
+    </div>
+    
+    <div class=" bg-[#F6F6F6]">
+          
+          <!-- Image -->
+          {% if block.settings.image != blank %}
+            <img src="{{ 'icon-fourth sneakers.png' | img_url }}" alt="{{ "shoe" }}" class="mx-auto mb-4 object-contain" width="" height="">
+          {% else %}
+            <div class="bg-gray-200 h-40 mb-4 flex items-center justify-center">No Image</div>
+          {% endif %}
+
+          <!-- Title -->
+          <h3 class="font-bold text-2xl text-black">{{ block.settings.title }}</h3>
+
+          <!-- External Link -->
+          {% if block.settings.link != blank %}
+            <a href="{{ block.settings.link }}" class="absolute bottom-4 right-4 w-10 h-10 bg-white text-black rounded flex items-center justify-center">
+              ↗
+            </a>
+          {% endif %}
+        </div>
+   </div>
+  </div>
+</section>
+
+<style>
+  .size-btn.active {
+    background: black;
+    color: white;
+  }
+</style>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    document.querySelectorAll(".size-btn").forEach(function(btn) {
+      btn.addEventListener("click", function() {
+        let parent = btn.closest("div");
+        parent.querySelectorAll(".size-btn").forEach(b => b.classList.remove("active"));
+        btn.classList.add("active");
+      });
+    });
+  });
+</script> {% endcomment %}
+
+<section class="bg-[#FAFAFA] py-16 px-14">
+  <!-- Top Banner -->
+  <div class="bg-[#232321]">
+    <p class="text-2xl font-normal text-[#FEFEFE] flex flex-wrap justify-center text-center py-6"> 
+      <span class="mx-4">SOLD ONLY IN PREMIUM QUALITY</span> |
+      <span class="mx-4">SUBSCRIBE TO OUR CARE PROGRAM</span> |
+      <span class="mx-4">FREE RETURNS EVEN AFTER 2 WEEKS</span>
+    </p>
+
+    <!-- Categories Header -->
+    <div class="flex flex-col items-center mt-16">
+          <div class="flex justify-between flex-row">
+            <div class="text-[#FFFFFF] font-semibold text-7xl px-7">CATEGORIES</div>
+            <div class="flex flex-row gap-4">
+                <div class="w-10 h-10 bg-[#E7E7E3] border-2 rounded-[8px] flex justify-center items-center mt-3 cursor-pointer">
+                    <span class="text-[#232321] w-1 h-2 flex items-center justify-center">&lt;</span>
+                </div>
+               <div class="w-10 h-10 bg-[#E7E7E3] border-2 border-white rounded-[8px] flex justify-center items-center mt-3 cursor-pointer">
+                    <span class="text-[#232321] w-1 h-2 flex items-center justify-center">&gt;</span>
+                </div>
+            </div>
+        </div>  
+      
+  <!-- Categories Content -->
+  <div class="flex flex-col lg:flex-row w-full pl-20">
+    
+    <!-- Left Category Card with Size Selector -->
+    <div class="bg-[#ECEEF0] rounded-tl-[60px] py-14 px-10 w-full lg:w-1/2 flex flex-col gap-6">
+      <!-- Size Header -->
+      <div class="flex justify-between items-center">
+        <span class="font-semibold text-base text-[#232321]">SIZE</span>
+        <a href="#" class="underline text-sm font-medium text-[#232321]">SIZE CHART</a>
+      </div>
+      
+      <!-- Size Buttons -->
+      <div class="flex flex-wrap gap-2">
+        {% assign sizes = "38,39,40,41,42,43,44,45,46,47" | split: "," %}
+        {% for size in sizes %}
+          <button 
+            class="size-btn px-3 py-1 text-sm rounded 
+              {% if size == '38' %} bg-black text-white {% else %} bg-white text-black {% endif %}"
+            data-size="{{ size }}">
+            {{ size }}
+          </button>
+        {% endfor %}
+      </div>
+
+      <!-- Shoe Image and Title -->
+      <div class="p-6 relative">
+        {% comment %} {% if section.blocks[0].settings.image != blank %} {% endcomment %}
+            <img src="{{ 'icon-fourth sneakers.png' | asset_url }}" alt="Shoe" class="mx-auto mb-4 object-contain" />
+          {% comment %} <img src="{{ section.blocks[0].settings.image | img_url: '500x' }}" alt="Shoe" class="mx-auto mb-4 object-contain" /> {% endcomment %}
+        {% comment %} {% endif %} {% endcomment %}
+        <h3 class="font-bold text-2xl text-black">Lifestyle Shoes</h3>
+        {% comment %} {% if section.blocks[0].settings.link != blank %} {% endcomment %}
+          <a href="{{ section.blocks[0].settings.link }}" class="absolute bottom-4 right-4 w-10 h-10 bg-white text-black rounded flex items-center justify-center">↗</a>
+        {% comment %} {% endif %} {% endcomment %}
+      </div>
+    </div>
+
+    <!-- Right Category Card -->
+    <div class="bg-white p-6 w-full lg:w-1/2 relative flex flex-col justify-center">
+      {% comment %} {% if section.blocks[1].settings.image != blank %} {% endcomment %}
+        <img src="{{ 'icon-fourth sneakers.png' | asset_url }}" alt="Shoe" class="mx-auto mb-4 object-contain" />
+        {% comment %} <img src="{{ 'icon-fourth sneakers.png' | img_url: '500x' }}" alt="Shoe" class="mx-auto mb-4 object-contain" /> {% endcomment %}
+      {% comment %} {% endif %} {% endcomment %}
+      <h3 class="font-bold text-2xl text-black">Basketball Shoes</h3>
+      {% comment %} {% if section.blocks[1].settings.link != blank %} {% endcomment %}
+                 <a href="{{ section.blocks[0].settings.link }}" class="absolute bottom-4 right-4 w-10 h-10 bg-white text-black rounded flex items-center justify-center">↗</a>
+        {% comment %} <a href="{{ section.blocks[1].settings.link }}" class="absolute bottom-4 right-4 w-10 h-10 bg-white text-black rounded flex items-center justify-center">↗</a> {% endcomment %}
+      {% comment %} {% endif %} {% endcomment %}
+    </div>
+
+  </div>
+    </div>
+  </div>
+
+</section>
+
+{% schema %}
+{
+  "name": "Categories Section",
+  "blocks": [
+    {
+      "type": "category_card",
+      "name": "Category Card",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Category Image"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Category Title"
+        },
+        {
+          "type": "url",
+          "id": "link",
+          "label": "Link"
+        }
+      ]
+    }
+  ],
+  "max_blocks": 2,
+  "presets": [
+    {
+      "name": "Categories Section",
+      "category": "Custom"
+    }
+  ]
+}
+{% endschema %}
+
+
+<!-- Styling for active size -->
+<style>
+  .size-btn.active {
+    background-color: black !important;
+    color: white !important;
+  }
+</style>
+
+<!-- Script for size selection -->
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    document.querySelectorAll(".size-btn").forEach(function(btn) {
+      btn.addEventListener("click", function() {
+        let buttons = btn.parentElement.querySelectorAll(".size-btn");
+        buttons.forEach(b => b.classList.remove("active"));
+        btn.classList.add("active");
+      });
+    });
+  });
+</script>

@@ -9,6 +9,10 @@
       "type": "newDrops",
       "settings": {}
     },
+     "categories": {
+      "type": "categories",
+      "settings": {}
+    },
     "collection": {
       "type": "reviews",
       "settings": {}
@@ -22,5 +26,5 @@
       "settings": {}
     }
   },
-  "order": ["hero", "newDrops", "collection", "community", "footer"]
+  "order": ["hero", "newDrops", "categories", "collection", "community", "footer"]
 }
