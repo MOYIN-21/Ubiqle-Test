@@ -79,5 +79,16 @@
         "default": 4
       }
     ]
+  },
+  {
+    "name": "color scheme",
+    "settings": [
+          {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "default": "scheme_1",
+      "label": "Color scheme"
+    }
+    ]
   }
 ]
