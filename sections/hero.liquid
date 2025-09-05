@@ -1,83 +1,44 @@
-<section class="px-14 bg-[#FAFAFA]">
-  <div class="relative h-[60vh] mt-4 md:h-[88vh] rounded-[28px] overflow-x-hidden px-4">
-  <!-- Background Images -->
-  <div id="carousel-images" class="w-full h-full">
-    <img src="{{ 'icon-shoppy.jpg' | asset_url }}" 
-      class="w-full h-full object-cover rounded-2xl absolute inset-0 opacity-100 transition-opacity duration-700" width="" height="" />
-    <img src="{{ 'icon-image(1).jpg' | asset_url }}" 
-      class="w-full h-full object-cover rounded-2xl absolute inset-0 opacity-0 transition-opacity duration-700" width="" height=""  />
-    <img src="{{ 'icon-image(2).jpg' | asset_url }}" 
-      class="w-full h-full object-cover rounded-2xl absolute inset-0 opacity-0 transition-opacity duration-700"width="" height=""  />
+<section class="py-8 md:py-16">
+  <div class="container mx-auto px-4">
+    <div class="relative h-[60vh] mt-4 md:h-[88vh] rounded-[28px] overflow-x-hidden">
+
+      <!-- Background Images -->
+      <div id="carousel-images" class="w-full h-full">
+        <img src="{{ 'icon-shoppy.jpg' | asset_url }}"
+             class="w-full h-full object-cover rounded-2xl absolute inset-0 opacity-100 transition-opacity duration-700" />
+        <img src="{{ 'icon-image(1).jpg' | asset_url }}"
+             class="w-full h-full object-cover rounded-2xl absolute inset-0 opacity-0 transition-opacity duration-700" />
+        <img src="{{ 'icon-image(2).jpg' | asset_url }}"
+             class="w-full h-full object-cover rounded-2xl absolute inset-0 opacity-0 transition-opacity duration-700" />
+      </div>
+
+      <!-- Text Content -->
+      <div class="absolute bottom-6 left-6 md:bottom-12 md:left-12 text-white z-10">
+        <h1 class="text-2xl md:text-4xl font-bold mb-2 font-rubik">NIKE AIR MAX</h1>
+        <p class="mb-4 text-sm md:text-base font-rubik">
+          Nike introducing the new air max for <br> everyone's comfort
+        </p>
+        {% render 'button',
+                link: '/#',
+                text: 'SHOP NOW',
+                extra_classes: 'bg-[#4A69E2] text-white'
+        %}
+      </div>
+
+      <!-- Right Images (thumbnails) -->
+      <div class="absolute bottom-5 right-5 flex flex-col gap-3 z-10">
+        <img data-index="1" src="{{ 'icon-image(1).jpg' | asset_url }}"
+             class="carousel-thumb w-28 h-28 md:w-40 md:h-40 rounded-3xl object-cover border-4 border-white cursor-pointer" />
+        <img data-index="2" src="{{ 'icon-image(2).jpg' | asset_url }}"
+             class="carousel-thumb w-28 h-28 md:w-40 md:h-40 rounded-3xl object-cover border-4 border-white cursor-pointer" />
+      </div>
+
+      <!-- Dots -->
+      <div id="carousel-dots" class="absolute bottom-4 left-1/2 -translate-x-1/2 flex space-x-2 z-10">
+        <span data-index="0" class="dot h-2 w-2 bg-[#FEFEFE] rounded-full inline-block cursor-pointer"></span>
+        <span data-index="1" class="dot h-2 w-2 bg-[#FEFEFE66] rounded-full inline-block cursor-pointer"></span>
+        <span data-index="2" class="dot h-2 w-2 bg-[#FEFEFE66] rounded-full inline-block cursor-pointer"></span>
+      </div>
+    </div>
   </div>
-
-  <!-- Text Content -->
-  <div class="absolute bottom-6 left-6 md:bottom-12 md:left-12 text-white z-10">
-  <h1 class="text-2xl md:text-4xl font-bold mb-2 font-rubik">NIKE AIR MAX</h1>
-  <p class="mb-4 text-sm md:text-base font-rubik">
-    Nike introducing the new air max for <br> everyone's comfort
-  </p>
-
-  {% render 'button', 
-    link: '/#', 
-    text: 'SHOP NOW', 
-    extra_classes: 'bg-[#4A69E2] text-white' 
-  %}
-</div>
-
-
-  <!-- Right Images (thumbnails) -->
-  <div class="absolute bottom-5 right-5 flex flex-col gap-3 z-10">
-    <img data-index="1" src="{{ 'icon-image(1).jpg' | asset_url }}" 
-      class="carousel-thumb w-40 h-40 rounded-3xl object-cover border-4 border-white cursor-pointer" width="" height="" />
-    <img data-index="2" src="{{ 'icon-image(2).jpg' | asset_url }}" 
-      class="carousel-thumb w-28 h-28 md:w-40 md:h-40 rounded-3xl object-cover border-4 border-white cursor-pointer" width="" height="" />
-  </div>
-
-  <!-- Dots -->
-  <div id="carousel-dots" class="absolute bottom-4 left-1/2 -translate-x-1/2 flex space-x-2 z-10">
-    <span data-index="0" class="dot h-2 w-2 bg-[#FEFEFE] rounded-full inline-block cursor-pointer"></span>
-    <span data-index="1" class="dot h-2 w-2 bg-[#FEFEFE66] rounded-full inline-block cursor-pointer"></span>
-    <span data-index="2" class="dot h-2 w-2 bg-[#FEFEFE66] rounded-full inline-block cursor-pointer"></span>
-  </div>
-</div>
-
-
-<script>
-  const images = document.querySelectorAll('#carousel-images img');
-  const dots = document.querySelectorAll('#carousel-dots .dot');
-  const thumbs = document.querySelectorAll('.carousel-thumb');
-  let current = 0;
-
-  function showSlide(index) {
-    images.forEach((img, i) => {
-      img.style.opacity = i === index ? '1' : '0';
-    });
-    dots.forEach((dot, i) => {
-      dot.style.backgroundColor = i === index ? '#FEFEFE' : '#FEFEFE66';
-    });
-    current = index;
-  }
-
-  // Dot click
-  dots.forEach(dot => {
-    dot.addEventListener('click', () => {
-      showSlide(parseInt(dot.dataset.index));
-    });
-  });
-
-  // Thumbnail click
-  thumbs.forEach(thumb => {
-    thumb.addEventListener('click', () => {
-      showSlide(parseInt(thumb.dataset.index));
-    });
-  });
-
-   {% comment %} Optional: auto-scroll every 5s {% endcomment %}
-   {% comment %} setInterval(() => {
-     let next = (current + 1) % images.length;
-     showSlide(next);
-  }, 5000); {% endcomment %}
-</script>
-
-
 </section>

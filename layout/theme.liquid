@@ -6,13 +6,20 @@
     {{ 'critical.css' | asset_url | stylesheet_tag: preload: true }}
 
       {% render 'meta-tags' %} {% endcomment %} {% endcomment %}
-       <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;700&display=swap" rel="stylesheet">
-
-           {% comment %} <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script> {% endcomment %}
+        <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;700&display=swap" rel="stylesheet"> 
             {{ 'tailwind.output.css' | asset_url | stylesheet_tag }}
+
+            <style>
+              body{
+                background-color: {{ settings.body_background }};
+                {% comment %} font-family: {{ settings.type_primary_font.family }}, {{ settings.type_primary_font.fallback_families }}; {% endcomment %}
+                font-family: 'Rubik', sans-serif;
+              }
+            </style>
 
     {{ content_for_header }}
   </head>
+
 
   <body>
     {% sections 'header-group' %}

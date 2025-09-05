@@ -22,73 +22,85 @@
       },
     ]
   },
-  {
-    "name": "t:general.layout",
+ 
+{
+    "name": "color",
     "settings": [
       {
-        "type": "select",
-        "id": "max_page_width",
-        "label": "t:labels.page_width",
-        "options": [
+        "type": "color_scheme_group",
+        "id": "color_schemes",
+        "definition": [
           {
-            "value": "90rem",
-            "label": "t:options.page_width.narrow"
+            "type": "color",
+            "id": "background",
+            "label": "background color",
+            "default": "#FFFFFF"
           },
           {
-            "value": "110rem",
-            "label": "t:options.page_width.wide"
+            "type": "color_background",
+            "id": "background_gradient",
+            "label": "background gradient",
+          },
+          {
+            "type": "color",
+            "id": "text",
+            "label": "text color",
+            "default": "#121212"
+          },
+          {
+            "type": "color",
+            "id": "button",
+            "label": "bottom background color",
+            "default": "#121212"
+          },
+          {
+            "type": "color",
+            "id": "button_label",
+            "label": "background text color",
+            "default": "#FFFFFF"
+          },
+          {
+            "type": "color",
+            "id": "secondary_button_label",
+            "label": "secondary background color",
+            "default": "#121212"
+          },
+          {
+            "type": "color",
+            "id": "shadow",
+            "label": "secondary text color",
+            "default": "#121212"
           }
         ],
-        "default": "90rem"
-      },
-      {
-        "type": "range",
-        "id": "min_page_margin",
-        "min": 10,
-        "max": 100,
-        "step": 1,
-        "unit": "px",
-        "label": "t:labels.page_margin",
-        "default": 20
+        "role": {
+          "text": "text",
+          "background": {
+            "solid": "background",
+            "gradient": "background_gradient"
+          },
+          "links": "secondary_button_label",
+          "icons": "text",
+          "primary_button": "button",
+          "on_primary_button": "button_label",
+          "primary_button_border": "button",
+          "secondary_button": "background",
+          "on_secondary_button": "secondary_button_label",
+          "secondary_button_border": "secondary_button_label"
+        }
       }
     ]
   },
   {
-    "name": "t:general.colors",
+    "name": "Body background",
     "settings": [
-      {
-        "type": "color",
-        "id": "background_color",
-        "default": "#FFFFFF",
-        "label": "t:labels.background"
-      },
-      {
-        "type": "color",
-        "id": "foreground_color",
-        "default": "#333333",
-        "label": "t:labels.foreground"
-      },
-      {
-        "type": "range",
-        "id": "input_corner_radius",
-        "min": 0,
-        "max": 10,
-        "step": 1,
-        "unit": "px",
-        "label": "t:labels.input_corner_radius",
-        "default": 4
-      }
-    ]
-  },
-  {
-    "name": "color scheme",
-    "settings": [
-          {
-      "type": "color_scheme",
-      "id": "color_scheme",
-      "default": "scheme_1",
-      "label": "Color scheme"
+    {
+      "type": "color",
+      "id": "body_background",
+      "label": "Body background",
+      "default": "#ffffff"
+
     }
-    ]
+  ]
+
   }
 ]

@@ -1,18 +1,22 @@
-<section>
-  
-<div class="flex flex-col py-16 px-14 bg-[#FAFAFA] ">
-  <div class="flex flex-row justify-between">
-    <h5 class="text-[#232321] font-bold text-7xl font-rubik">REVIEWS</h5>
-    <a href="/product">
-      <button class="bg-[#4A69E2] px-4 py-2 rounded-md font-semibold mt-6 text-white font-rubik">SEE ALL</button>
-    </a>
-  </div>
+<section class="py-16 px-4 md:px-14">
+  <div class="container mx-auto">
 
-  <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-3 mt-8 gap-6">
-    {% render 'review-card', title: "Good Quality", text: "I highly recommend shopping from Kicks.", avatar: "icon-ellipse.png", stars: 5, image: "icon-goodQuality1.png" %}
-    {% render 'review-card', title: "Excellent Service", text: "Fast delivery and great support.", avatar: "icon-ellipse2.png", stars: 5, image: "icon-goodQuality2.png" %}
-    {% render 'review-card', title: "Comfortable Shoes", text: "Wearing them every day!", avatar: "icon-ellipse3.png", stars: 5, image: "icon-goodQuality3.png" %}
-  </div>
-</div>
+    <!-- Header -->
+    <div class="flex flex-col md:flex-row justify-between items-start md:items-center">
+      <h5 class="text-[#232321] font-bold text-4xl md:text-7xl font-rubik">REVIEWS</h5>
+      <a href="/product" class="mt-4 md:mt-0">
+        <button class="bg-[#4A69E2] px-4 py-2 rounded-md font-semibold text-white font-rubik">
+          SEE ALL
+        </button>
+      </a>
+    </div>
 
+    <!-- Review Cards -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-8">
+      {% render 'review-card', title: "Good Quality", text: "I highly recommend shopping from Kicks.", avatar: "icon-ellipse.png", stars: 5, image: "icon-goodQuality1.png" %}
+      {% render 'review-card', title: "Excellent Service", text: "Fast delivery and great support.", avatar: "icon-ellipse2.png", stars: 5, image: "icon-goodQuality2.png" %}
+      {% render 'review-card', title: "Comfortable Shoes", text: "Wearing them every day!", avatar: "icon-ellipse3.png", stars: 5, image: "icon-goodQuality3.png" %}
+    </div>
+
+  </div>
 </section>

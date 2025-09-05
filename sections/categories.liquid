@@ -1,7 +1,7 @@
 {% comment %} {% comment %} <section class="px-14 bg-[#FAFAFA] py-16 ">
     <div class="bg-[#232321] px-14 py-6">
         <div>
-            <p class="text-2xl font-normal text-[#FEFEFE] flex flex-wrap justify-center"> 
+            <p class="text-2xl font-normal text-[#FEFEFE] flex flex-wrap justify-center">
                 <span class="mx-4">SOLD ONLY IN PREMIUM QUALITY</span> |
                 <span class="mx-4">SUBSCRIBE TO OUR CARE PROGRAM</span> |
                 <span class="mx-4">FREE RETURNS EVEN AFTER 2 WEEKS</span>
@@ -18,7 +18,7 @@
                     <span class="text-[#232321] w-1 h-2 flex items-center justify-center">&gt;</span>
                 </div>
             </div>
-        </div>  
+        </div>
 
     </div>
     </div>
@@ -27,7 +27,7 @@
 <section class="bg-[#FAFAFA] py-16">
   <div class="bg-[#232321] px-14 py-6">
      <div>
-            <p class="text-2xl font-normal text-[#FEFEFE] flex flex-wrap justify-center"> 
+            <p class="text-2xl font-normal text-[#FEFEFE] flex flex-wrap justify-center">
                 <span class="mx-4">SOLD ONLY IN PREMIUM QUALITY</span> |
                 <span class="mx-4">SUBSCRIBE TO OUR CARE PROGRAM</span> |
                 <span class="mx-4">FREE RETURNS EVEN AFTER 2 WEEKS</span>
@@ -63,7 +63,7 @@
             <div>
                 {% assign sizes = "38,39,40,41,42,43,44,45,46,47" | split: "," %}
                 {% for size in sizes %}
-            <button 
+            <button
             class="size-btn px-3 py-1 text-sm rounded bg-white text-black cursor-pointer"
             data-size="{{ size }}">
             {{ size }}
@@ -76,7 +76,7 @@
     <div class="grid grid-cols-1 md:grid-cols-2">
       {% for block in section.blocks %}
         <div class="relative p-6 bg-[#F5F5F5]">
-          
+
           <!-- Image -->
           {% if block.settings.image != blank %}
             <img src="{{ 'icon-fourth sneakers.png' | img_url }}" alt="{{ "shoe" }}" class="mx-auto mb-4 object-contain" width="" height="">
@@ -96,9 +96,9 @@
         </div>
       {% endfor %}
     </div>
-    
+
     <div class=" bg-[#F6F6F6]">
-          
+
           <!-- Image -->
           {% if block.settings.image != blank %}
             <img src="{{ 'icon-fourth sneakers.png' | img_url }}" alt="{{ "shoe" }}" class="mx-auto mb-4 object-contain" width="" height="">
@@ -139,83 +139,156 @@
   });
 </script> {% endcomment %}
 
-<section class="bg-[#FAFAFA] py-16 px-14">
+{% comment %}<section class="bg-[#FAFAFA] py-16 px-14">{% endcomment %}
+  {% comment %}<!-- Top Banner -->{% endcomment %}
+  {% comment %}<div class="bg-[#232321]">{% endcomment %}
+    {% comment %}<p class="text-2xl font-normal text-[#FEFEFE] flex flex-wrap justify-center text-center py-6">{% endcomment %}
+      {% comment %}<span class="mx-4">SOLD ONLY IN PREMIUM QUALITY</span> |{% endcomment %}
+      {% comment %}<span class="mx-4">SUBSCRIBE TO OUR CARE PROGRAM</span> |{% endcomment %}
+      {% comment %}<span class="mx-4">FREE RETURNS EVEN AFTER 2 WEEKS</span>{% endcomment %}
+    {% comment %}</p>{% endcomment %}
+{% comment %}{% endcomment %}
+    {% comment %}<!-- Categories Header -->{% endcomment %}
+    {% comment %}<div class="flex flex-col mt-12">{% endcomment %}
+            {% comment %}<div class="flex justify-between flex-row px-14 ">{% endcomment %}
+                {% comment %}<div class="text-[#FFFFFF] font-semibold text-7xl px-7">CATEGORIES</div>{% endcomment %}
+                {% comment %}<div class="flex flex-row gap-4">{% endcomment %}
+                    {% comment %}<div class="w-10 h-10 bg-[#E7E7E3] border-2 rounded-[8px] flex justify-center items-center mt-3 cursor-pointer">{% endcomment %}
+                        {% comment %}<span class="text-[#232321] w-1 h-2 flex items-center justify-center">&lt;</span>{% endcomment %}
+                    {% comment %}</div>{% endcomment %}
+                {% comment %}<div class="w-10 h-10 bg-[#E7E7E3] border-2 border-white rounded-[8px] flex justify-center items-center mt-3 cursor-pointer">{% endcomment %}
+                        {% comment %}<span class="text-[#232321] w-1 h-2 flex items-center justify-center">&gt;</span>{% endcomment %}
+                {% comment %}</div>{% endcomment %}
+            {% comment %}</div>{% endcomment %}
+        {% comment %}</div>{% endcomment %}
+{% comment %}{% endcomment %}
+  {% comment %}<!-- Categories Content -->{% endcomment %}
+  {% comment %}<div class="flex flex-col lg:flex-row w-full pl-20 mt-10">{% endcomment %}
+{% comment %}{% endcomment %}
+    {% comment %}<!-- Left Category Card with Size Selector -->{% endcomment %}
+    {% comment %}<div class="bg-[#ECEEF0] rounded-tl-[60px] py-14 px-10 w-full lg:w-1/2 flex flex-col gap-6">{% endcomment %}
+      {% comment %}<!-- Size Header -->{% endcomment %}
+      {% comment %}<div class="flex justify-between items-center">{% endcomment %}
+        {% comment %}<span class="font-semibold text-base text-[#232321]">SIZE</span>{% endcomment %}
+        {% comment %}<a href="#" class="underline text-sm font-medium text-[#232321]">SIZE CHART</a>{% endcomment %}
+      {% comment %}</div>{% endcomment %}
+{% comment %}{% endcomment %}
+      {% comment %}<!-- Size Buttons -->{% endcomment %}
+      {% comment %}<div class="flex flex-wrap gap-2">{% endcomment %}
+        {% comment %}{% assign sizes = "38,39,40,41,42,43,44,45,46,47" | split: "," %}{% endcomment %}
+        {% comment %}{% for size in sizes %}{% endcomment %}
+          {% comment %}<button{% endcomment %}
+            {% comment %}class="size-btn px-3 py-1 h-12 w-12 cursor-pointer text-sm rounded{% endcomment %}
+              {% comment %}{% if size == '38' %} bg-black text-white {% else %} bg-white text-black {% endif %}"{% endcomment %}
+            {% comment %}data-size="{{ size }}">{% endcomment %}
+            {% comment %}{{ size }}{% endcomment %}
+          {% comment %}</button>{% endcomment %}
+        {% comment %}{% endfor %}{% endcomment %}
+      {% comment %}</div>{% endcomment %}
+{% comment %}{% endcomment %}
+      {% comment %}<!-- Shoe Image and Title -->{% endcomment %}
+      {% comment %}<div class="p-6 relative">{% endcomment %}
+        {% comment %}{% comment %} {% if section.blocks[0].settings.image != blank %} {% endcomment %}{% endcomment %}
+            {% comment %}<img src="{{ 'icon-fourth sneakers.png' | asset_url }}" alt="Shoe" class="mx-auto object-contain" width="" height="">{% endcomment %}
+          {% comment %}{% comment %} <img src="{{ section.blocks[0].settings.image | img_url: '500x' }}" alt="Shoe" class="mx-auto mb-4 object-contain" /> {% endcomment %}{% endcomment %}
+        {% comment %}{% comment %} {% endif %} {% endcomment %}{% endcomment %}
+        {% comment %}<h3 class="text-4xl text-[#232321] font-semibold font-rubik">LIFESTYLES <br> SHOES</h3>{% endcomment %}
+        {% comment %}{% comment %} {% if section.blocks[0].settings.link != blank %} {% endcomment %}{% endcomment %}
+          {% comment %}<a href="{{ section.blocks[0].settings.link }}" class="absolute bottom-4 right-4 w-10 h-10 bg-[#232321] text-white rounded flex items-center justify-center">↗</a>{% endcomment %}
+        {% comment %}{% comment %} {% endif %} {% endcomment %}{% endcomment %}
+      {% comment %}</div>{% endcomment %}
+    {% comment %}</div>{% endcomment %}
+{% comment %}{% endcomment %}
+    {% comment %}<!-- Right Category Card -->{% endcomment %}
+    {% comment %}<div class="bg-white px-14 w-full lg:w-1/2 relative flex flex-col justify-center">{% endcomment %}
+      {% comment %}{% comment %} {% if section.blocks[1].settings.image != blank %} {% endcomment %}{% endcomment %}
+        {% comment %}<img src="{{ 'icon-fourth sneakers.png' | asset_url }}" alt="Shoe" class="mx-auto object-contain" width="" height="">{% endcomment %}
+        {% comment %}{% comment %} <img src="{{ 'icon-fourth sneakers.png' | img_url: '500x' }}" alt="Shoe" class="mx-auto mb-4 object-contain" /> {% endcomment %}{% endcomment %}
+      {% comment %}{% comment %} {% endif %} {% endcomment %}{% endcomment %}
+      {% comment %}<h3 class="text-4xl text-[#232321] font-semibold font-rubik">BASKETBALL <br> SHOES</h3>{% endcomment %}
+      {% comment %}{% comment %} {% if section.blocks[1].settings.link != blank %} {% endcomment %}{% endcomment %}
+        {% comment %}<a href="{{ section.blocks[0].settings.link }}" class="absolute bottom-4 right-4 w-10 h-10 bg-[#232321] text-white rounded flex items-center justify-center">↗</a>{% endcomment %}
+        {% comment %}{% comment %} <a href="{{ section.blocks[1].settings.link }}" class="absolute bottom-4 right-4 w-10 h-10 bg-white text-black rounded flex items-center justify-center">↗</a> {% endcomment %}{% endcomment %}
+      {% comment %}{% comment %} {% endif %} {% endcomment %}{% endcomment %}
+    {% comment %}</div>{% endcomment %}
+{% comment %}{% endcomment %}
+  {% comment %}</div>{% endcomment %}
+    {% comment %}</div>{% endcomment %}
+  {% comment %}</div>{% endcomment %}
+{% comment %}{% endcomment %}
+{% comment %}</section>{% endcomment %}
+
+<section class="py-16 px-4 sm:px-8 lg:px-14">
   <!-- Top Banner -->
   <div class="bg-[#232321]">
-    <p class="text-2xl font-normal text-[#FEFEFE] flex flex-wrap justify-center text-center py-6"> 
-      <span class="mx-4">SOLD ONLY IN PREMIUM QUALITY</span> |
-      <span class="mx-4">SUBSCRIBE TO OUR CARE PROGRAM</span> |
-      <span class="mx-4">FREE RETURNS EVEN AFTER 2 WEEKS</span>
+    <p class="text-base sm:text-lg md:text-xl lg:text-2xl font-normal text-[#FEFEFE] flex flex-wrap justify-center text-center py-6">
+      <span class="mx-2 sm:mx-4">SOLD ONLY IN PREMIUM QUALITY</span> |
+      <span class="mx-2 sm:mx-4">SUBSCRIBE TO OUR CARE PROGRAM</span> |
+      <span class="mx-2 sm:mx-4">FREE RETURNS EVEN AFTER 2 WEEKS</span>
     </p>
 
     <!-- Categories Header -->
     <div class="flex flex-col mt-12">
-            <div class="flex justify-between flex-row px-14 ">
-                <div class="text-[#FFFFFF] font-semibold text-7xl px-7">CATEGORIES</div>
-                <div class="flex flex-row gap-4">
-                    <div class="w-10 h-10 bg-[#E7E7E3] border-2 rounded-[8px] flex justify-center items-center mt-3 cursor-pointer">
-                        <span class="text-[#232321] w-1 h-2 flex items-center justify-center">&lt;</span>
-                    </div>
-                <div class="w-10 h-10 bg-[#E7E7E3] border-2 border-white rounded-[8px] flex justify-center items-center mt-3 cursor-pointer">
-                        <span class="text-[#232321] w-1 h-2 flex items-center justify-center">&gt;</span>
-                </div>
-            </div>
-        </div>  
-      
-  <!-- Categories Content -->
-  <div class="flex flex-col lg:flex-row w-full pl-20 mt-10">
-    
-    <!-- Left Category Card with Size Selector -->
-    <div class="bg-[#ECEEF0] rounded-tl-[60px] py-14 px-10 w-full lg:w-1/2 flex flex-col gap-6">
-      <!-- Size Header -->
-      <div class="flex justify-between items-center">
-        <span class="font-semibold text-base text-[#232321]">SIZE</span>
-        <a href="#" class="underline text-sm font-medium text-[#232321]">SIZE CHART</a>
-      </div>
-      
-      <!-- Size Buttons -->
-      <div class="flex flex-wrap gap-2">
-        {% assign sizes = "38,39,40,41,42,43,44,45,46,47" | split: "," %}
-        {% for size in sizes %}
-          <button 
-            class="size-btn px-3 py-1 h-12 w-12 cursor-pointer text-sm rounded 
-              {% if size == '38' %} bg-black text-white {% else %} bg-white text-black {% endif %}"
-            data-size="{{ size }}">
-            {{ size }}
-          </button>
-        {% endfor %}
+      <div class="flex flex-col sm:flex-row justify-between items-center gap-6 sm:gap-0 px-4 sm:px-8 lg:px-14">
+        <div class="text-[#FFFFFF] font-semibold text-4xl sm:text-6xl lg:text-7xl text-center sm:text-left">
+          CATEGORIES
+        </div>
+        <div class="flex flex-row gap-4">
+          <div class="w-10 h-10 bg-[#E7E7E3] border-2 rounded-[8px] flex justify-center items-center cursor-pointer">
+            <span class="text-[#232321]">&lt;</span>
+          </div>
+          <div class="w-10 h-10 bg-[#E7E7E3] border-2 border-white rounded-[8px] flex justify-center items-center cursor-pointer">
+            <span class="text-[#232321]">&gt;</span>
+          </div>
+        </div>
       </div>
 
-      <!-- Shoe Image and Title -->
-      <div class="p-6 relative">
-        {% comment %} {% if section.blocks[0].settings.image != blank %} {% endcomment %}
-            <img src="{{ 'icon-fourth sneakers.png' | asset_url }}" alt="Shoe" class="mx-auto object-contain" width="" height="">
-          {% comment %} <img src="{{ section.blocks[0].settings.image | img_url: '500x' }}" alt="Shoe" class="mx-auto mb-4 object-contain" /> {% endcomment %}
-        {% comment %} {% endif %} {% endcomment %}
-        <h3 class="text-4xl text-[#232321] font-semibold font-rubik">LIFESTYLES <br> SHOES</h3>
-        {% comment %} {% if section.blocks[0].settings.link != blank %} {% endcomment %}
-          <a href="{{ section.blocks[0].settings.link }}" class="absolute bottom-4 right-4 w-10 h-10 bg-[#232321] text-white rounded flex items-center justify-center">↗</a>
-        {% comment %} {% endif %} {% endcomment %}
+      <!-- Categories Content -->
+      <div class="flex flex-col lg:flex-row w-full mt-10 gap-8 lg:gap-0 px-4 sm:px-8 lg:pl-20">
+
+        <!-- Left Category Card with Size Selector -->
+        <div class="bg-[#ECEEF0] rounded-tl-[40px] lg:rounded-tl-[60px] py-10 sm:py-14 px-6 sm:px-10 w-full lg:w-1/2 flex flex-col gap-6">
+          <!-- Size Header -->
+          <div class="flex justify-between items-center flex-wrap gap-2">
+            <span class="font-semibold text-sm sm:text-base text-[#232321]">SIZE</span>
+            <a href="#" class="underline text-xs sm:text-sm font-medium text-[#232321]">SIZE CHART</a>
+          </div>
+
+          <!-- Size Buttons -->
+          <div class="flex flex-wrap gap-2">
+            {% assign sizes = "38,39,40,41,42,43,44,45,46,47" | split: "," %}
+            {% for size in sizes %}
+              <button
+                      class="size-btn px-3 py-1 h-10 w-10 sm:h-12 sm:w-12 cursor-pointer text-sm sm:text-base rounded
+                  {% if size == '38' %} bg-black text-white {% else %} bg-white text-black {% endif %}"
+                      data-size="{{ size }}">
+                {{ size }}
+              </button>
+            {% endfor %}
+          </div>
+
+          <!-- Shoe Image and Title -->
+          <div class="p-4 sm:p-6 relative">
+            <img src="{{ 'icon-fourth sneakers.png' | asset_url }}" alt="Shoe" class="mx-auto object-contain max-h-40 sm:max-h-52 lg:max-h-64" />
+            <h3 class="text-2xl sm:text-3xl lg:text-4xl text-[#232321] font-semibold font-rubik mt-4">
+              LIFESTYLES <br class="hidden sm:block"> SHOES
+            </h3>
+            <a href="{{ section.blocks[0].settings.link }}" class="absolute bottom-2 right-2 sm:bottom-4 sm:right-4 w-8 h-8 sm:w-10 sm:h-10 bg-[#232321] text-white rounded flex items-center justify-center">↗</a>
+          </div>
+        </div>
+
+        <!-- Right Category Card -->
+        <div class="bg-white px-6 sm:px-10 lg:px-14 w-full lg:w-1/2 relative flex flex-col justify-center">
+          <img src="{{ 'icon-first sneakers.png' | asset_url }}" alt="Shoe" class="mx-auto object-contain max-h-40 sm:max-h-52 lg:max-h-64" />
+          <h3 class="text-2xl sm:text-3xl lg:text-4xl text-[#232321] font-semibold font-rubik mt-4 text-center lg:text-left">
+            BASKETBALL <br class="hidden sm:block"> SHOES
+          </h3>
+          <a href="{{ section.blocks[0].settings.link }}" class="absolute bottom-2 right-2 sm:bottom-4 sm:right-4 w-8 h-8 sm:w-10 sm:h-10 bg-[#232321] text-white rounded flex items-center justify-center">↗</a>
+        </div>
+
       </div>
-    </div>
-
-    <!-- Right Category Card -->
-    <div class="bg-white px-14 w-full lg:w-1/2 relative flex flex-col justify-center">
-      {% comment %} {% if section.blocks[1].settings.image != blank %} {% endcomment %}
-        <img src="{{ 'icon-first sneakers.png' | asset_url }}" alt="Shoe" class="mx-auto object-contain" width="" height="">
-        {% comment %} <img src="{{ 'icon-fourth sneakers.png' | img_url: '500x' }}" alt="Shoe" class="mx-auto mb-4 object-contain" /> {% endcomment %}
-      {% comment %} {% endif %} {% endcomment %}
-      <h3 class="text-4xl text-[#232321] font-semibold font-rubik">BASKETBALL <br> SHOES</h3>
-      {% comment %} {% if section.blocks[1].settings.link != blank %} {% endcomment %}
-        <a href="{{ section.blocks[0].settings.link }}" class="absolute bottom-4 right-4 w-10 h-10 bg-[#232321] text-white rounded flex items-center justify-center">↗</a>
-        {% comment %} <a href="{{ section.blocks[1].settings.link }}" class="absolute bottom-4 right-4 w-10 h-10 bg-white text-black rounded flex items-center justify-center">↗</a> {% endcomment %}
-      {% comment %} {% endif %} {% endcomment %}
-    </div>
-
-  </div>
     </div>
   </div>
-
 </section>
 
 {% schema %}
