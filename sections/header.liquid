@@ -1,6 +1,6 @@
-<header  class="px-14 xl:px-0">
-  <header class="w-full  px-8 xl:px-0">
-    <nav id="header" class="container mx-auto h-16 flex justify-between items-center px-6 xl:w-[1320px] rounded-2xl shadow">
+<header  class="">
+  <header class="w-full  ">
+    <nav id="header" class="container mx-auto h-16 flex justify-between items-center px-10 xl:w-[1320px] rounded-2xl shadow">
       <!-- Hamburger menu -->
       <div class="lg:hidden cursor-pointer" >
         <span>
@@ -9,7 +9,6 @@
       </div>
       <!-- Left Menu -->
       <div class="hidden lg:flex items-center gap-10 text-sm font-medium">
-        {% comment %} <li><a href="/#" class="text-[#232321] text-base font-semibold hover:underline">New Drops 🔥</a></li> {% endcomment %}
         <ul class="flex items-center gap-10 text-sm font-medium">
           {%- for nav in linklists['main-menu'].links -%}
             <li class="relative group">
@@ -63,10 +62,6 @@
             </li>
           {%- endfor -%}
         </ul>
-        {% comment %}
-          <li><a href="/#" class="text-[#232321] text-base font-semibold hover:underline">Men</a></li>
-          <li><a href="/#" class="text-[#232321] text-base font-semibold hover:underline">Women</a></li>
-        {% endcomment %}
       </div>
 
       <!-- Logo -->
@@ -137,8 +132,6 @@
     color: {{ section.settings.color_scheme.settings.text }};
   }
 </style>
-
-
 
 {% schema %}
 {

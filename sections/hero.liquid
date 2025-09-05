@@ -1,5 +1,5 @@
-<section class="py-8 md:py-16">
-  <div class="container mx-auto px-4">
+<section class="pt-8 md:pt-16">
+  <div class="container mx-auto">
     <div class="relative h-[60vh] mt-4 md:h-[88vh] rounded-[28px] overflow-x-hidden">
 
       <!-- Background Images -->
@@ -11,6 +11,14 @@
         <img src="{{ 'icon-image(2).jpg' | asset_url }}"
              class="w-full h-full object-cover rounded-2xl absolute inset-0 opacity-0 transition-opacity duration-700" />
       </div>
+
+      <!-- Right Vertical Tag -->
+{% comment %} <div class="absolute top-1/2 right-0 transform -translate-y-1/2 translate-x-1/2 rotate-90 origin-right z-10 hidden md:block">
+  <div class="bg-black text-white text-xs font-semibold px-3 py-1 rounded-full">
+    Nike product of the year
+  </div>
+</div> {% endcomment %}
+
 
       <!-- Text Content -->
       <div class="absolute bottom-6 left-6 md:bottom-12 md:left-12 text-white z-10">
@@ -42,3 +50,20 @@
     </div>
   </div>
 </section>
+
+<script> const images = document.querySelectorAll('#carousel-images img'); 
+  const dots = document.querySelectorAll('#carousel-dots .dot'); 
+  const thumbs = document.querySelectorAll('.carousel-thumb');
+   let current = 0; 
+   function showSlide(index) { images.forEach((img, i) => { img.style.opacity = i === index ? '1' : '0'; });
+    dots.forEach((dot, i) => { dot.style.backgroundColor = i === index ? '#FEFEFE' : '#FEFEFE66'; }); 
+    current = index; } 
+    // Dot click 
+    dots.forEach(dot => { dot.addEventListener('click', () => { showSlide(parseInt(dot.dataset.index)); }); }); 
+    // Thumbnail click 
+    thumbs.forEach(thumb => { thumb.addEventListener('click', () => { showSlide(parseInt(thumb.dataset.index)); }); }); 
+  
+      {% comment %} setInterval(() => { let next = (current + 1) % images.length; showSlide(next); }, 5000); {% endcomment %}
+      </script>
+
+  
