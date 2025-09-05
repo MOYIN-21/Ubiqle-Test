@@ -1,178 +1,153 @@
-<header class="px-14 bg-[#FAFAFA]">
-  <div class="w-full bg-white overflow-x-hidden px-8 rounded-[24px]">
-  <nav class="container mx-auto h-16 flex justify-between items-center px-6">
-    <!-- Left Menu -->
-    <ul class="flex items-center gap-10 text-sm font-medium">
-      <li><a href="/#" class="text-[#232321] text-base font-semibold hover:underline">New Drops 🔥</a></li>
-      <li><a href="/#" class="text-[#232321] text-base font-semibold hover:underline">Men</a></li>
-      <li><a href="/#" class="text-[#232321] text-base font-semibold hover:underline">Women</a></li>
-    </ul>
-
-    <!-- Logo -->
-    <div class="flex justify-center items-center">
-      <a href="/#"> 
-       <img
-          class="block w-full h-full object-center object-cover cursor-pointer"
-          src="{{ 'icon-logo.svg' | asset_url }}"
-          alt="Logo Image"
-          width=""
-          height=""
-        /> 
-    </a>
-      
-      {% comment %} <a href="/" class="text-2xl font-extrabold tracking-widest">KICKS</a> {% endcomment %}
-    </div>
-
-    <!-- Right Icons -->
-    <div class="flex items-center gap-6">
-      <!-- Search -->
-      <button class="hover:text-gray-600">
-                       <a href="/#"> 
-
-         <img
-          class="block w-full h-[28px] w-[28px] object-center object-cover cursor-pointer"
-          src="{{ 'icon-search.svg' | asset_url }}"
-          alt="Search-icon Image"
-          width=""
-          height=""
-        /> 
-        </a>
-      </button>
-
-      <!-- User -->
-      <button class="hover:text-gray-600">
-                       <a href="/#"> 
-
-         <img
-          class="block w-full h-[24px] w-[24px] object-center object-cover ursor-pointer"
-          src="{{ 'icon-user.svg' | asset_url }}"
-          alt="Profile-image"
-          width=""
-          height=""
-        /> 
-        </a>
-      </button>
-
-      <div class="relative">
-                       <a href="/#"> 
-        <span class="absolute -top-4 bg-[#FFA52F] text-black text-xs font-bold w-5 h-[32px] w-[32px] rounded-full flex items-center justify-center">0</span>
-        </a>
+<header  class="">
+  <header class="w-full  ">
+    <nav id="header" class="container mx-auto h-16 flex justify-between items-center px-10 xl:w-[1320px] rounded-2xl shadow">
+      <!-- Hamburger menu -->
+      <div class="lg:hidden cursor-pointer" >
+        <span>
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" stroke-width="2.5" stroke="#000000" fill="none" class="duration-300 transform transition-all" style="width: 48px; height: 48px;"><path d="M7.68 32h48.64M7.68 15.97h48.64M7.68 48.03h48.64"></path></svg>
+        </span>
       </div>
-    </div>
-  </nav>
-</div>
+      <!-- Left Menu -->
+      <div class="hidden lg:flex items-center gap-10 text-sm font-medium">
+        <ul class="flex items-center gap-10 text-sm font-medium">
+          {%- for nav in linklists['main-menu'].links -%}
+            <li class="relative group">
+              <a href="/#" class="flex justify-center items-center text-[#232321] text-base font-semibold hover:underline">
+                {{ nav.title }}
+                <img src="{{ 'icon-menu-arrow.png' | asset_url }}" alt="Arrow" class="w-3 h-3 mr-5">
+              </a>
+              
+              {%- if nav.links != blank -%}
+                <ul class="absolute left-0 mt-2 w-40 bg-white shadow-lg rounded-md opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-opacity duration-200 z-10">
+                  {% for subNav in nav.links %}
+                               <li><a href="{{ subNav.url }}" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">{{ subNav.title }}</a></li>
+              {% endfor %}
+                 
+                  {% comment %} <li><a href="/#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Bottoms</a></li>
+                  <li><a href="/#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Accessories</a></li> {% endcomment %}
+                </ul>  
+              {%- endif -%}
+              
+              
+            </li>
+          {% else %}
+            <li>
+              <a href="/#" class="text-[#232321] text-base font-semibold hover:underline"> New Drops 🔥 </a>
+            </li>
 
+            <!-- Men Dropdown -->
+            <li class="relative group">
+              <a href="/#" class="flex items-center text-[#232321] text-base font-semibold hover:underline">
+                Men
+                <img src="{{ 'icon-menu-arrow.png' | asset_url }}" alt="Arrow" class="w-3 h-3 mr-5">
+              </a>
+              <ul class="absolute left-0 mt-2 w-40 bg-white shadow-lg rounded-md opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-opacity duration-200 z-10">
+                <li><a href="/#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Tops</a></li>
+                <li><a href="/#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Bottoms</a></li>
+                <li><a href="/#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Accessories</a></li>
+              </ul>
+            </li>
 
-{% comment %} <header class="w-full h-[1320px] border-b border-b-gray-200 relative px-10 py-8">
-    <nav class="container mx-auto h-[60px] flex justify-between items-center">
-    <!-- Menu -->
-    <ul class="hidden xl:flex xl:justify-center xl:items-center xl:gap-6">
-      <li class="hidden xl:block xl:text-xs xl:font-medium">
-        <a href="/collection">New Drops 🔥</a>
-      </li>
-      <li class="hidden xl:block xl:text-xs xl:font-medium">
-        <a href="/collection">Men</a>
-      </li>
-      <li class="hidden xl:block xl:text-xs xl:font-medium">
-        <a href="/collection">Woman</a>
-      </li>
-  
-    </ul>
-    <!-- End Menu -->
-    <!-- Logo -->
-    <div class="block">
-      <a class="block w-[128px] h-[32px] sm:w-36 lg:w-44 xl:w-52" href="/">
-       <img
-          class="block w-full h-full object-center object-cover"
-          src="./assets/Logo.svg"
-          alt="Logo Image"
-        /> 
-      </a>
-    </div>
-    <!-- End Logo -->
-    <!-- Search and Icons -->
-    <div class="flex justify-center items-center gap-6">
-      <!-- Search -->
-      <div class="hidden sm:w-2xs sm:block sm:border-b sm:border-b-gray-200">
-        <div
-          class="hidden sm:h-[40px] sm:flex sm:justify-center sm:items-center sm:gap-2"
-        >
-          <span class="hidden sm:block">
-            {% comment %} <img
-              class="hidden sm:block sm:w-5 sm:h-5"
-              src="../../src/svgs/search.svg"
-              alt="search icon"
-            /> {% endcomment %}
-          </span>
-          <span class="hidden sm:block">
-            <input
-              class="hidden sm:block sm:text-xs sm:h-[40px] sm:border-none sm:outline-none sm:bg-transparent"
-              type="search"
-              placeholder="Search for products and brands..."
-            />
-          </span>
-        </div>
+            <!-- Women Dropdown -->
+            <li class="relative group">
+              <a href="/#" class="flex items-center text-[#232321] text-base font-semibold hover:underline">
+                Women
+                <img src="{{ 'icon-menu-arrow.png' | asset_url }}" alt="Arrow" class="w-3 h-3 ml-1">
+              </a>
+              <ul class="absolute left-0 mt-2 w-40 bg-white shadow-lg rounded-md opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-opacity duration-200 z-10">
+                <li><a href="/#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Dresses</a></li>
+                <li><a href="/#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Shoes</a></li>
+                <li><a href="/#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Accessories</a></li>
+              </ul>
+            </li>
+          {%- endfor -%}
+        </ul>
       </div>
-      <!-- End Search -->
-      <!-- Icons -->
-      <div class="flex w-20 justify-between items-center sm:w-32">
-        <!-- User icon -->
-        <div class="hidden xl:block xl:relative">
-          <span class="hidden sm:block sm:cursor-pointer userIcon">
-            {% comment %} <img
-              class="sm:w-7 sm:h-7"
-              src="../../src/svgs/user.svg"
-              alt="user icon"
-            /> {% endcomment %}
-          </span>
-          <div
-            class="hidden userBlock xl:block xl:bg-white xl:border border-gray-200 rounded-sm shadow-lg xl:w-80 xl:p-5 xl:absolute xl:top-40 xl:-right-8 xl:opacity-0 xl:duration-300 xl:ease-in-out xl:z-40"
-          >
-            <div
-              class="xl:flex xl:flex-col xl:justify-center xl:items-center xl:gap-2"
+
+      <!-- Logo -->
+      <div class="flex justify-center items-center">
+        <a href="/#">
+          {% if section.settings.logo != blank %}
+            {{
+              section.settings.logo
+              | image_url: width: 200
+              | image_tag: class: 'block w-full h-full object-center object-cover cursor-pointer'
+            }}
+          {% else %}
+            <img
+              class="block w-full h-full object-center object-cover cursor-pointer"
+              src="{{ 'icon-logo.svg' | asset_url }}"
+              alt="Logo Image"
+              width=""
+              height=""
             >
-              <h6 class="xl:text-base xl:font-medium xl:text-center">
-                Your account
-              </h6>
-              <p class="xl:text-sm xl:text-center">
-                Login if you are an existing Angeldren customer or register to
-                make ordering simple
-              </p>
-              <a
-                href="#"
-                class="xl:text-sm xl:text-center xl:bg-blue-700 xl:rounded-sm xl:px-6 xl:py-3 xl:text-white block"
-                >Login/Register</a
-              >
-            </div>
-          </div>
+          {% endif %}
+        </a>
+      </div>
+
+      <!-- Right Icons -->
+      <div class="flex items-center gap-6">
+        <!-- Search -->
+        <button class="hover:text-gray-600">
+          <a href="/#">
+            <img
+              class="block w-full h-[28px] w-[28px] object-center object-cover cursor-pointer"
+              src="{{ 'icon-search.svg' | asset_url }}"
+              alt="Search-icon Image"
+              width=""
+              height=""
+            >
+          </a>
+        </button>
+
+        <!-- User -->
+        <button class="hover:text-gray-600">
+          <a href="/#">
+            <img
+              class="block w-full h-[24px] w-[24px] object-center object-cover cursor-pointer"
+              src="{{ 'icon-user.svg' | asset_url }}"
+              alt="Profile-image"
+              width=""
+              height=""
+            >
+          </a>
+        </button>
+
+        <!-- Cart -->
+        <div class="">
+          <a href="/#">
+            <span class="bg-[#FFA52F] text-black text-xs font-bold w-[32px] h-[32px] rounded-full flex items-center justify-center"
+              >0</span
+            >
+          </a>
         </div>
-        <!-- heart  -->
-        <span>
-          {% comment %} <img
-            class="w-7 h-7"
-            src="../../src/svgs/heart.svg"
-            alt="heart icon"
-          /> {% endcomment %}
-        </span>
-        <!-- bag  -->
-        <span>
-          {% comment %} <img class="w-7 h-7" src="../../src/svgs/bag.svg" alt="bag icon" /> {% endcomment %}
-        </span>
       </div>
-      <!-- End Icons -->
-      <!-- Hamburger icon -->
-      <div class="block cursor-pointer xl:hidden">
-        <span class="block w-7 h-7 hamburger">
-          {% comment %} <img
-            class="block w-7 h-7"
-            src="shoppy-x-ray.svg"
-            alt="menu icon"
-          /> {% endcomment %}
-        </span>
-      </div>
-      <!-- End Hamburger icon -->
-    </div>
-    <!-- End Search and Icons -->
-  </nav>
-</header> {% endcomment %}
+    </nav>
+  </header>
 </header>
+
+<style>
+  #header{
+    background-color: {{ section.settings.color_scheme.settings.background }};
+    color: {{ section.settings.color_scheme.settings.text }};
+  }
+</style>
+
+{% schema %}
+{
+  "name": "Header",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "Logo",
+      "label": "Logo"
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "Choose your color scheme",
+      "default": "scheme-1"
+    }
+  ]
+}
+{% endschema %}

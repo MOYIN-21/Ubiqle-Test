@@ -1,120 +1,75 @@
-<footer class="px-14 bg-[#FAFAFA] py-16">
+<footer class="py-12 ">
+    <div class="container mx-auto bg-[#232321] rounded-[28px]">
+        <div class=" p-6 md:p-10">
 
-<div class="bg-[#232321] rounded-[28px] flex flex-col">
-    <div class="mx-auto w-full max-w-screen-xl p-10">
-      <div class="flex flex-row justify-between">
-        <div>
-            <h2 class="mb-6 text-4xl font-semibold text-[#FFA52F]">About us</h2>
-            <p class="text-[#E7E7E3] font-semibold text-xl">We are the biggest hyperstore in the universe. <br>
-             We got you all cover with our exclusive <br> collections and latest drops.</p>
-        </div>
+            <!-- Top Footer Content -->
+            <div class="flex flex-col lg:flex-row justify-between gap-10">
 
-        <div class="flex flex-row gap-32">
-                  <div>
-            <h2 class="mb-6 text-2xl font-semibold text-[#FFA52F] ">Categories</h2>
-            <ul class="text-[#E7E7E3] font-semibold text-xl">
-                <li class="mb-4">
-                    <a href="#" class="hover:underline">Runners</a>
-                </li>
-                <li class="mb-4">
-                    <a href="#" class="hover:underline">Sneakers</a>
-                </li>
-                <li class="mb-4">
-                    <a href="#" class="hover:underline">Basketball</a>
-                </li>
-                <li class="mb-4">
-                    <a href="#" class="hover:underline">Outdoor</a>
-                </li>
-                 <li class="mb-4">
-                    <a href="#" class="hover:underline">Golf</a>
-                </li>
-                 <li class="mb-4">
-                    <a href="#" class="hover:underline">Hiking</a>
-                </li>
-            </ul>
-        </div>
-        <div>
-                        <h2 class="mb-6 text-2xl font-semibold text-[#FFA52F] ">Comapny</h2>
-            <ul class="text-[#E7E7E3] font-semibold text-xl">
-                <li class="mb-4">
-                    <a href="#" class="hover:underline">About</a>
-                </li>
-                <li class="mb-4">
-                    <a href="#" class="hover:underline">Contact</a>
-                </li>
-                <li class="mb-4">
-                    <a href="#" class="hover:underline">Blogs</a>
-                </li>
-            </ul>
-        </div>
-        <div>
-       <h2 class="mb-6 text-2xl font-semibold text-[#FFA52F] ">Follow us</h2>
-       <div class="flex flex-row gap-4">
-        <ul class="text-[#E7E7E3] flex flex-row">
-               <a href="/#"> 
-       <img
-          class="block w-full h-full object-center object-cover"
-          src="{{ 'icon-facebook.png' | asset_url }}"
-          alt="Logo Image"
-          width=""
-          height=""
-        /> 
-    </a>
-            </ul>
-                     <ul class="text-[#E7E7E3] flex flex-row">
-               <a href="/#"> 
-       <img
-          class="block w-full h-full object-center object-cover"
-          src="{{ 'icon_instagram.png' | asset_url }}"
-          alt="Logo Image"
-          width=""
-          height=""
-        /> 
-      </a>
-            </ul>
-                     <ul class="text-[#E7E7E3] flex flex-row">
-               <a href="/#"> 
-       <img
-          class="block w-full h-full object-center object-cover"
-          src="{{ 'icon_twitter.png' | asset_url }}"
-          alt="Logo Image"
-          width=""
-          height=""
-        /> 
-    </a>
-            </ul>
-                     <ul class="text-[#E7E7E3] flex flex-row">
-               <a href="/#"> 
-       <img
-          class="block w-full h-full object-center object-cover"
-          src="{{ 'icon-tiktok.png' | asset_url }}"
-          alt="Logo Image"
-          width=""
-          height=""
-        /> 
-    </a>
-            </ul>
-       </div>
-            
-        </div>
+                <!-- About -->
+                <div class="lg:w-1/3">
+                    <h2 class="mb-4 text-3xl md:text-4xl font-semibold text-[#FFA52F]">About us</h2>
+                    <p class="text-[#E7E7E3] font-semibold text-lg md:text-xl leading-relaxed">
+                        We are the biggest hyperstore in the universe. <br>
+                        We got you all cover with our exclusive <br>
+                        collections and latest drops.
+                    </p>
+                </div>
+
+                <!-- Links Sections -->
+                <div class="flex flex-col sm:flex-row gap-10 lg:gap-32">
+
+                    <!-- Categories -->
+                    <div>
+                        <h2 class="mb-4 text-xl md:text-2xl font-semibold text-[#FFA52F]">Categories</h2>
+                        <ul class="text-[#E7E7E3] font-semibold text-lg md:text-xl space-y-3">
+                            <li><a href="#" class="hover:underline">Runners</a></li>
+                            <li><a href="#" class="hover:underline">Sneakers</a></li>
+                            <li><a href="#" class="hover:underline">Basketball</a></li>
+                            <li><a href="#" class="hover:underline">Outdoor</a></li>
+                            <li><a href="#" class="hover:underline">Golf</a></li>
+                            <li><a href="#" class="hover:underline">Hiking</a></li>
+                        </ul>
+                    </div>
+
+                    <!-- Company -->
+                    <div>
+                        <h2 class="mb-4 text-xl md:text-2xl font-semibold text-[#FFA52F]">Company</h2>
+                        <ul class="text-[#E7E7E3] font-semibold text-lg md:text-xl space-y-3">
+                            <li><a href="#" class="hover:underline">About</a></li>
+                            <li><a href="#" class="hover:underline">Contact</a></li>
+                            <li><a href="#" class="hover:underline">Blogs</a></li>
+                        </ul>
+                    </div>
+
+                    <!-- Follow Us -->
+                    <div>
+                        <h2 class="mb-4 text-xl md:text-2xl font-semibold text-[#FFA52F]">Follow us</h2>
+                        <div class="flex gap-4">
+                            <a href="/#">
+                                <img src="{{ 'icon-facebook.png' | asset_url }}" alt="Facebook" class="w-6 h-6 md:w-8 md:h-8" />
+                            </a>
+                            <a href="/#">
+                                <img src="{{ 'icon_instagram.png' | asset_url }}" alt="Instagram" class="w-6 h-6 md:w-8 md:h-8" />
+                            </a>
+                            <a href="/#">
+                                <img src="{{ 'icon_twitter.png' | asset_url }}" alt="Twitter" class="w-6 h-6 md:w-8 md:h-8" />
+                            </a>
+                            <a href="/#">
+                                <img src="{{ 'icon-tiktok.png' | asset_url }}" alt="Tiktok" class="w-6 h-6 md:w-8 md:h-8" />
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
 
-    </div>
-        </div>
-
+        <!-- Bottom Logo -->
         <div class="flex justify-center items-center px-6">
-      {% comment %} <a href="/#">  {% endcomment %}
-       <img
-          class="block w-full h-full object-center object-cover"
-          src="{{ 'icon-bigLogo.png' | asset_url }}"
-          alt="Logo Image"
-          width=""
-          height=""
-        /> 
-    {% comment %} </a> {% endcomment %}
-
+            <img
+                    class="object-contain"
+                    src="{{ 'icon-bigLogo.png' | asset_url }}"
+                    alt="Big Logo"
+            />
         </div>
-
-  </div>
-
+    </div>
 </footer>

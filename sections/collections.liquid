@@ -1,1 +1,97 @@
-<div class="text-4xl">COLLECTIONS</div>
+<header class="bg-[#FAFAFA] px-4 md:px-14">
+    <div class="w-full bg-white overflow-x-hidden px-6 md:px-8 rounded-[24px]">
+        <nav class="container mx-auto h-16 flex justify-between items-center">
+
+            <!-- Left Menu (Hidden on small, flex on md+) -->
+            <ul class="  md:flex items-center gap-6 lg:gap-10 font-medium">
+                <li><a href="/#" class="text-[#232321] text-base font-semibold hover:underline">New Drops 🔥</a></li>
+                <li class="relative group">
+                    <a href="/#" class="flex items-center text-[#232321] text-base font-semibold hover:underline">
+                        Men
+                        <img src="{{ 'icon-menu-arrow.png' | asset_url }}" alt="Arrow" class="w-3 h-3 ml-1" />
+                    </a>
+                    <!-- Dropdown Example -->
+                    <ul class="absolute left-0 mt-2 w-40 bg-white shadow-lg rounded-md opacity-0 group-hover:opacity-100 transition-opacity duration-200 invisible group-hover:visible z-10">
+                        <li><a href="/#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Tops</a></li>
+                        <li><a href="/#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Bottoms</a></li>
+                        <li><a href="/#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Accessories</a></li>
+                    </ul>
+                </li>
+
+                <li class="relative group">
+                    <a href="/#" class="flex items-center text-[#232321] text-base font-semibold hover:underline">
+                        Women
+                        <img src="{{ 'icon-menu-arrow.png' | asset_url }}" alt="Arrow" class="w-3 h-3 ml-1" />
+                    </a>
+                    <!-- Dropdown Example -->
+                    <ul class="absolute left-0 mt-2 w-40 bg-white shadow-lg rounded-md opacity-0 group-hover:opacity-100 transition-opacity duration-200 invisible group-hover:visible z-10">
+                        <li><a href="/#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Dresses</a></li>
+                        <li><a href="/#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Shoes</a></li>
+                        <li><a href="/#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Accessories</a></li>
+                    </ul>
+                </li>
+
+                {% comment %}<li><a href="/#" class="text-[#232321] text-base font-semibold hover:underline">Men</a></li>{% endcomment %}
+                {% comment %}<li><a href="/#" class="text-[#232321] text-base font-semibold hover:underline">Women</a></li>{% endcomment %}
+            </ul>
+
+            <!-- Logo (always visible) -->
+            <div class="flex justify-center items-center flex-shrink-0">
+                <a href="/#">
+                    <img
+                            class="h-8 sm:h-10 md:h-12 object-contain cursor-pointer"
+                            src="{{ 'icon-logo.svg' | asset_url }}"
+                            alt="Logo"
+                    />
+                </a>
+            </div>
+
+            <!-- Right Icons -->
+            <div class="flex items-center gap-4 sm:gap-6">
+
+                <!-- Search (hidden on xs, show md+) -->
+                <button class="hidden md:block hover:text-gray-600">
+                    <a href="/#">
+                        <img
+                                class="h-6 w-6 object-contain cursor-pointer"
+                                src="{{ 'icon-search.svg' | asset_url }}"
+                                alt="Search"
+                        />
+                    </a>
+                </button>
+
+                <!-- User -->
+                <button class="hidden sm:block hover:text-gray-600">
+                    <a href="/#">
+                        <img
+                                class="h-6 w-6 object-contain cursor-pointer"
+                                src="{{ 'icon-user.svg' | asset_url }}"
+                                alt="User"
+                        />
+                    </a>
+                </button>
+
+                <!-- Cart -->
+                <div class="relative">
+                    <a href="/#">
+                        <img
+                                class="h-6 w-6 object-contain cursor-pointer"
+                                src="{{ 'icon-cart.svg' | asset_url }}"
+                                alt="Cart"
+                        />
+                        <span class="absolute -top-2 -right-2 bg-[#FFA52F] text-black text-xs font-bold w-5 h-5 rounded-full flex items-center justify-center">
+              0
+            </span>
+                    </a>
+                </div>
+
+                <!-- Hamburger (only on mobile) -->
+                <button class="block md:hidden">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7 text-[#232321]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+                    </svg>
+                </button>
+            </div>
+        </nav>
+    </div>
+</header>
